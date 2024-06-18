@@ -1,0 +1,104 @@
+{
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::884185907314:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "dnsSearchDomains": null,
+            "environmentFiles": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/order-app-task",
+                    "awslogs-region": "ap-southeast-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "entryPoint": null,
+            "portMappings": [
+                {
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "containerPort": 3000
+                }
+            ],
+            "command": null,
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [
+                {
+                    "name": " DATABASE_PASSWORD",
+                    "value": "password"
+                },
+                {
+                    "name": "DATABASE_HOST",
+                    "value": "database1.cnfsagq7ln9f.ap-southeast-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "DATABASE_NAME",
+                    "value": "order_service"
+                },
+                {
+                    "name": "DATABASE_PORT",
+                    "value": "3306"
+                },
+                {
+                    "name": "DATABASE_USERNAME",
+                    "value": "admin"
+                },
+                {
+                    "name": "DB_PWD",
+                    "value": "password"
+                },
+                {
+                    "name": "PAYMENT_SERVICE_ENDPOINT",
+                    "value": "http://payment-app-alb-937596490.ap-southeast-1.elb.amazonaws.com/payments"
+                }
+            ],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": null,
+            "workingDirectory": null,
+            "secrets": null,
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": null,
+            "stopTimeout": null,
+            "image": "884185907314.dkr.ecr.ap-southeast-1.amazonaws.com/order-service:latest",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "order-app",
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            }
+        }
+    ],
+    "memory": "512",
+    "taskRoleArn": "arn:aws:iam::884185907314:role/ecsTaskExecutionRole",
+    "family": "order-app-task",
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "inferenceAccelerators": null,
+    "proxyConfiguration": null,
+    "volumes": [],
+    "tags": []
+}
